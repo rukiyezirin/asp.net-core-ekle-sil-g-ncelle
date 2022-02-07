@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebApplication5.Models.Course>
+
+<div class="m-5">
+    <div class="bg-success text-white m-5 p-2">Kurs Listesi</div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped p-4">
+            <thead>
+                <tr>
+                    <th>Adı</th>
+                    <th>fiyat</th>
+                    <th>Durum</th>
+                    <th>Durum</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.isActive</td>
+                    <td>
+                        <form asp-action="Delete" method="post">
+                            <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary btn-sm">Düzenle</a>
+                            <input type="hidden" name="id" value="@item.id" />
+                            <button type="submit" class="btn btn-primary btn-sm">Sil</button>
+                        </form>
+                    </td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-action="Create" class="btn btn-primary">kurs ekle</a>
+    </div>
+</div>

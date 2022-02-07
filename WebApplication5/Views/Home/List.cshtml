@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication5.Models.Request>
+    <div class="m-5">
+        <div class="bg-success text-white m-5 p-2">Katılanlar</div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped p-4">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Adı</th>
+                        <th>Email Adresi</th>
+                        <th>Telefon Numarası</th>
+                        <th>Mesaj</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Message</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
